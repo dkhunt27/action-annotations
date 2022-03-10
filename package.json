@@ -10,7 +10,8 @@
     "lint": "eslint src/**/*.ts",
     "package": "ncc build --source-map --license licenses.txt",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm test && npm run package"
+    "all": "npm run build && npm run format && npm run lint && npm test && npm run package",
+    "build:check": "lines=`git diff --ignore-space-at-eol dist/ | wc -l`; if [ $lines -gt 1 ]; then echo \"Detected uncommitted changes after build.  See status below:\"; diff=`git diff --ignore-space-at-eol dist/`; echo $diff; echo ''; exit 1; fi"
   },
   "repository": {
     "type": "git",
