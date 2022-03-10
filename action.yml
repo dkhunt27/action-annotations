@@ -1,11 +1,14 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Annotations Action'
+description: 'Annotates your git action'
+author: 'dkhunt27'
 inputs:
-  milliseconds: # change this
+  type: 
+    required: false
+    description: 'The type of annotation: error, warning, or notice (default)'
+    default: 'notice'
+  msg: 
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'Message for annotation'
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+  using: node16
+  main: dist/index.js

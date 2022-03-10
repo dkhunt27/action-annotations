@@ -1,28 +1,26 @@
 {
-  "name": "typescript-action",
-  "version": "0.0.0",
-  "private": true,
-  "description": "TypeScript template action",
+  "name": "action-annotations",
+  "version": "0.1.0",
+  "description": "Annotates your git action",
   "main": "lib/main.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.release.json",
     "format": "prettier --write '**/*.ts'",
     "format-check": "prettier --check '**/*.ts'",
     "lint": "eslint src/**/*.ts",
     "package": "ncc build --source-map --license licenses.txt",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+    "all": "npm run build && npm run format && npm run lint && npm test && npm run package"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/dkhunt27/action-annotations.git"
   },
   "keywords": [
     "actions",
-    "node",
-    "setup"
+    "annotations"
   ],
-  "author": "",
+  "author": "dkhunt27",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.6.0"
@@ -38,6 +36,10 @@
     "js-yaml": "^4.1.0",
     "prettier": "2.5.1",
     "ts-jest": "^27.1.2",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-push": "if [[ $SKIP_HOOKS ]]; then exit 0; fi; npm run all && npm run build:check"
   }
 }

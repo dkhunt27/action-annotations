@@ -21,4 +21,16 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./
         with:
-          milliseconds: 1000
+          msg: test notice (default)
+      - uses: ./
+        with:
+          type: notice
+          msg: test notice
+      - uses: ./
+        with:
+          type: warning
+          msg: test warning
+      - uses: ./
+        with:
+          type: error
+          msg: test error
