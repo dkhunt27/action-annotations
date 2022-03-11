@@ -1,0 +1,9 @@
+{
+  "depcheck": {
+    "ignoreMatches": [
+      "@types/node",
+      "npm-check-pr397", 
+      "yorkie"
+    ]
+  }
+}

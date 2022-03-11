@@ -1,6 +1,5 @@
 /* eslint-disable filenames/match-regex */
 import * as core from '@actions/core'
-import {expect, jest, test} from '@jest/globals'
 import {annotate} from '../annotate'
 
 jest.mock('@actions/core')
