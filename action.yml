@@ -1,6 +1,9 @@
 name: Simple Annotations Action
 description: Annotates your git action
 author: dkhunt27
+branding:
+  icon: alert-circle
+  color: blue
 inputs:
   type: 
     required: false
