@@ -1,7 +1,8 @@
 import * as core from '@actions/core'
 import {annotate} from './annotate'
 
-async function run(): Promise<void> {
+// exported for testing
+export const run = (): void => {
   try {
     const type: string = core.getInput('type')
     const msg: string = core.getInput('msg')

@@ -30,29 +30,47 @@ $ npm test
 
 ...
 ```
-## Publish to a distribution branch
 
-Actions are run from GitHub repos so we will checkin the packed dist folder. 
 
-Then run [ncc](https://github.com/zeit/ncc) and push the results:
-```bash
-$ npm run package
-$ git add dist
-$ git commit -a -m "prod dependencies"
-$ git push origin releases/v1
-```
-## Validate
-
-You can now validate the action by referencing `./` in a workflow in your repo (see [test.yml](.github/workflows/test.yml))
+## Inputs
 
 ```yaml
-uses: ./
-with:
-  milliseconds: 1000
+  type: 
+    required: false
+    description: 'The type of annotation: error, warning, or notice (default)'
+    default: 'notice'
+  msg: 
+    required: true
+    description: 'Message for annotation'
 ```
 
-See the [actions tab](https://github.com/actions/typescript-action/actions) for runs of this action! :rocket:
+## Usage
+  
+```yaml
+      - name: Annotate 
+        uses: dkhunt27/action-annotations@v1
+        with:
+          type: notice
+          msg: Annotate This!
+```
+  
+## Making changes and pushing releases
 
-## Usage:
+- wait for pipelines to finish
+- git checkout main
+- git pull
+- git tag v0.3.0
+- SKIP_HOOKS=true git push origin v0.3.0
+- in github, edit tag and save (this will push to marketplace)
 
-After testing you can [create a v1 tag](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md) to reference the stable and latest V1 action
+## NPM Check
+
+```bash
+npx npm-check
+
+npm run npm:check
+```
+
+## License
+
+[MIT](LICENSE)
