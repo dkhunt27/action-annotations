@@ -3,7 +3,7 @@ description: Annotates your git action
 author: dkhunt27
 branding:
   icon: alert-circle
-  color: blue
+  color: purple
 inputs:
   type: 
     required: false
