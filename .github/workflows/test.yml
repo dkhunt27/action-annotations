@@ -39,6 +39,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Conventional Commits (dkhunt27)
-        uses: dkhunt27/action-conventional-commits@v1.1.0
+        uses: webiny/action-conventional-commits@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
