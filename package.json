@@ -28,7 +28,7 @@
     "@actions/core": "^1.10.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
+    "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.1.0",
     "@types/jest": "^29.2.0",
     "@types/jest-when": "^3.5.2",
