@@ -1,10 +1,10 @@
-name: 'build-test'
+name: "build-test"
 on: # rebuild any PRs and main branch changes
   pull_request:
   push:
     branches:
       - main
-      - 'releases/*'
+      - "releases/*"
 
 jobs:
   build-lint-test: # make sure build/ci work properly
@@ -39,6 +39,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Conventional Commits (dkhunt27)
-        uses: webiny/action-conventional-commits@v1
+        uses: webiny/action-conventional-commits@v1.3.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
